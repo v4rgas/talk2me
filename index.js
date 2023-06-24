@@ -20,6 +20,8 @@ const changeLetter = (num) => {
 const writeLetter = () => {
   footer.textContent += letterElement.textContent;
   console.log("test");
+  currentIndex = 0;
+  changeLetter(0);
 };
 
 const deleteLetter = () => {
@@ -49,8 +51,6 @@ deleteBtn.addEventListener("click", deleteLetter);
 navigator.mediaSession.setActionHandler("play", () => changeLetter(1));
 navigator.mediaSession.setActionHandler("pause", () => changeLetter(1));
 navigator.mediaSession.setActionHandler("nexttrack", () => writeLetter);
-navigator.mediaSession.setActionHandler("previoustrack", () =>
-  deleteLetter()
-);
+navigator.mediaSession.setActionHandler("previoustrack", () => deleteLetter());
 
 console.log(add);
