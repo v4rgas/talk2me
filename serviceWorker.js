@@ -1,3 +1,5 @@
+const staticAssets = ['./']
+
 self.addEventListener("install", async () => {
   const cache = await caches.open("talkcache");
   cache.addAll(staticAssets);
