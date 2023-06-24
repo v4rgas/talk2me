@@ -1,3 +1,9 @@
+window.addEventListener("load", async () => {
+  if ("serviceWorker" in navigator) {
+    await navigator.serviceWorker.register("serviceWorker.js");
+  }
+});
+
 const audio = new Audio();
 audio.src = "./silence.mp3";
 audio.loop = true;

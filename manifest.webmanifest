@@ -1,0 +1,19 @@
+{
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "https://v4rgas.github.io/talk2me/",
+  "name": "Talk2Me",
+  "short_name": "Talk2Me",
+  "orientation": "portrait-primary",
+  "icons": [
+      {
+          "src": "icons/icon.png",
+          "sizes": "512x512",
+          "type": "image/png",
+          "purpose": "any maskable"
+      }
+  ]
+
+}
