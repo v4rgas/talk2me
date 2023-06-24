@@ -1,4 +1,4 @@
-const staticAssets = ['./']
+const staticAssets = ["./", "./index.js", "./icons/icon.png"];
 
 self.addEventListener("install", async () => {
   const cache = await caches.open("talkcache");
