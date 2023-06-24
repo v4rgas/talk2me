@@ -9,30 +9,36 @@ audio.src = "./silence.mp3";
 audio.loop = true;
 
 const letters = "EAOSRNIDLCTUMPBGVYQHFZJÑXKW";
+const lettersVowelsFirst = "EAOIUSRNDLCTMPBGVYQHFZJÑXKW";
+let alphabet = letters;
+let currentIndex = 0;
+
 const letterElement = document.getElementById("letter");
 const left = document.getElementById("tapL");
 const right = document.getElementById("tapR");
 const deleteBtn = document.getElementById("delete");
 const addBtn = document.getElementById("add");
 const footer = document.getElementById("footer");
-let currentIndex = 0;
 
 const changeLetter = (num) => {
   currentIndex = (currentIndex + num + letters.length) % letters.length;
-  console.log(currentIndex);
-  letterElement.textContent = letters[currentIndex];
+  letterElement.textContent = alphabet[currentIndex];
 };
 
 const writeLetter = () => {
+  if ("AEIOU".includes(letterElement.textContent)) {
+    alphabet = letters;
+  } else {
+    alphabet = lettersVowelsFirst;
+  }
+
   footer.textContent += letterElement.textContent;
-  console.log("test");
   currentIndex = 0;
   changeLetter(0);
 };
 
 const deleteLetter = () => {
   footer.textContent = footer.textContent.slice(0, -1);
-  console.log("test");
 };
 
 window.addEventListener("click", () => {
@@ -42,12 +48,10 @@ window.addEventListener("click", () => {
 
 left.addEventListener("click", () => {
   changeLetter(-1);
-  console.log("test");
 });
 
 right.addEventListener("click", () => {
   changeLetter(1);
-  console.log("test");
 });
 
 addBtn.addEventListener("click", writeLetter);
