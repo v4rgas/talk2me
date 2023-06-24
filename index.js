@@ -50,7 +50,6 @@ deleteBtn.addEventListener("click", deleteLetter);
 
 navigator.mediaSession.setActionHandler("play", () => changeLetter(1));
 navigator.mediaSession.setActionHandler("pause", () => changeLetter(1));
-navigator.mediaSession.setActionHandler("nexttrack", () => writeLetter);
-navigator.mediaSession.setActionHandler("previoustrack", () => deleteLetter());
-
+navigator.mediaSession.setActionHandler("previoustrack", deleteLetter);
+navigator.mediaSession.setActionHandler("nexttrack", writeLetter);
 console.log(add);
